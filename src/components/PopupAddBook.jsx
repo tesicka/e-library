@@ -1,59 +1,65 @@
 import React from 'react'
+import { useState } from "react"
+import {useNavigate} from "react-router-dom";
 
 const PopupAddBook = props => {
 
- /* const[userData, setUserData] = useState({
-    email:"",
-    password: "",
-});
-let navigate = useNavigate();
-function handleInput(e){
-    let newUserData = userData;
-    newUserData[e.target.name] = e.target.value;
-   // console.log(newUserData)
-   setUserData(newUserData);
-}
-function handleLogin(e){
-    e.preventDefault();
-    axios.post("api/login", userData).then(res=>{
-        console.log(res.data);
-        if(res.data.success === true){
-            window.sessionStorage.setItem("auth_token", res.data.access_token);
-            addToken(res.data.access_token);
-            navigate("/");
-        }
-    }).catch(e=>{
-        console.log(e)
-    });
-}*/
 
+  /*
+ const[userData, setUserData] = useState({
+        email:"",
+        password: "",
+    });
+  */
+  const[addData, setAddData] = useState({
+    name:"",
+    author: "",
+    category: "",
+});
+
+let navigate = useNavigate();
+
+function handleInput(e){
+    let newAddData = addData;
+    newAddData[e.target.name] = e.target.value;
+    console.log(newAddData)
+   setAddData(newAddData);
+}
+
+function handleAdding(e){
+  e.preventDefault();
+  /*axios.post("api/add", addData).then(res=>{
+      console.log(res.data);
+      navigate("/add");
+  }).catch(e=>{
+      console.log(e)
+  });
+*/
+}
   return (
       <div className='popupAdd'>
       <div className='boxAdd'>
     
  
       <div class="add_book">
-            <form>
+            <form onSubmit={handleAdding}>
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" id="form3Example3" className="form-control form-control-lg" name="name"/>
+                    <input type="text" id="form3Example3" className="form-control form-control-lg" name="name" onInput={handleInput}/>
                 </div>
                 <div class="form-group">
                     <label>Author</label>
-                    <input type="text" id="form3Example3" className="form-control form-control-lg" name="author"/>
+                    <input type="text" id="form3Example3" className="form-control form-control-lg" name="author" onInput={handleInput}/>
                 </div>
                 <div class="form-group">
                     <label>Category</label>
-                    <input type="text" id="form3Example3" className="form-control form-control-lg" name="category"/>
-                </div>
-                
+                    <input type="text" id="form3Example3" className="form-control form-control-lg" name="category" onInput={handleInput}/>
+                </div>    
                 <div className="text-center text-lg-start mt-2 pt-2">
-                <button type="submit" className="add_btn">Add</button>
+                <button type="submit" className="add_btn"  onClick={props.handleClose}>Add</button>
                 </div>
-            </form>
+            </form>        
         </div>
-
-      <button className='close' onClick={props.handleClose}>x</button>
       </div>
     </div>
   )

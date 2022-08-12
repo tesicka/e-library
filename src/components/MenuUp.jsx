@@ -11,6 +11,7 @@ function MenuUp() {
   }
 
 
+
   return (
     <div>
     <div className='menuUp'>
@@ -19,14 +20,16 @@ function MenuUp() {
     <div className='options'>
 
       <div>
-        <button onClick={togglePopupAdd} type="button" class="btn btn-danger btn btn-info" id="add_button">
-        Add book
+      <input
+      class="btn btn-danger btn btn-info"
+      type="button"
+      value="Add book"
+      onClick={togglePopupAdd}
+    />
         {isOpenAdd && <PopupAddBook
-
-        handleClose={togglePopupAdd}
-        />}
-       
-        </button>
+      handleClose={togglePopupAdd}
+    />}
+        
         </div>
       <div><button type="button" class="btn btn-danger btn btn-info" id="change_button">Change book's properties</button> </div>
       <div><button type="button" class="btn btn-danger btn btn-info" id="remove_button">Remove book</button> </div>
