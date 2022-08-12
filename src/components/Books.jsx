@@ -34,9 +34,10 @@ function Books({book, Add, present}) {
       
     <button className='button_more' onClick={togglePopup}>
       <AiOutlinePlus></AiOutlinePlus>
-      {isOpen &&  <PopUp
-      handleClose={()=>{}}
-      content={<div className='desc'>{book.description}</div>}
+      {isOpen &&  <PopUp 
+      book={book}
+      handleClose={togglePopup}
+      content={<div>Smth</div>}
       />}
      
       </button>

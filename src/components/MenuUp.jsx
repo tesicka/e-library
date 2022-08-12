@@ -12,6 +12,7 @@ function MenuUp() {
       <div><button type="button" class="btn btn-danger btn btn-info" id="change_button">Change book's properties</button> </div>
       <div><button type="button" class="btn btn-danger btn btn-info" id="remove_button">Remove book</button> </div>
     </div>
+
     </div>
   )
 }
