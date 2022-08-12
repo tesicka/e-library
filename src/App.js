@@ -94,7 +94,7 @@ function App() {
 
   function favouriteBooks(){
     
-    let favs = books.filter((book)=>book.counter>0);
+    let favs = books.filter((book)=>book.counter===1);
     setSelected(favs);
 
   }
