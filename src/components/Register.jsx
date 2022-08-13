@@ -13,7 +13,7 @@ function Register() {
     });
 
     let navigate = useNavigate();
-    
+
     function handleInput(e){
         let newUserData = userData;
         newUserData[e.target.name] = e.target.value;
@@ -31,6 +31,7 @@ function Register() {
     }
   return (
     <div class="register-page">
+    <h3 className='register'>Registration form</h3>
     <div class="form">
       <form onSubmit={handleRegister} class="register-form">
       <input type="text" placeholder="name and surname" name="name" onInput={handleInput}/>
