@@ -10,6 +10,7 @@ import MenuUp from './components/MenuUp';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import { render } from '@testing-library/react';
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
 
@@ -124,6 +125,7 @@ function App() {
 
        <Routes>
        <Route path='/login' element={<Login/>}/>
+       <Route path='/register' element={<Register/>}/>
         <Route path='/' element={<Bookstore books={books} Add={likeABook}></Bookstore>}/>
         <Route path='/fav' element={<Favourites books={selectedBooks} />}/>
        </Routes>
