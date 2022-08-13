@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import PopupAddBook from './PopupAddBook';
 import PopupChangeBook from './PopupChangeBook';
+import PopupRemoveBook from './PopupRemoveBook';
 
 function MenuUp() {
 
@@ -15,6 +16,12 @@ function MenuUp() {
 
   const togglePopupChange = () => {
     setIsOpenChange(!isOpenChange);
+  }
+
+  const [isOpenRemove, setIsOpenRemove] = useState(false);
+
+  const togglePopupRemove = () => {
+    setIsOpenRemove(!isOpenRemove);
   }
 
 
@@ -50,7 +57,18 @@ function MenuUp() {
     />}
       </div>
 
-      <div><button type="button" class="btn btn-danger btn btn-info" id="remove_button">Remove book</button> </div>
+      <div>
+      <input
+      class="btn btn-danger btn btn-info"
+      type="button"
+      value="Remove"
+      onClick={togglePopupRemove}
+    />
+        {isOpenRemove && <PopupRemoveBook
+      handleClose={togglePopupRemove}
+    />}
+      </div>
+
     </div>
 
     </div>

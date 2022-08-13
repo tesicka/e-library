@@ -58,6 +58,7 @@
  .button_next{
   border-style: none;
   background-color: #800000;
+  color: white;
   padding-left: 10px;
   size: 25px;
   
@@ -94,10 +95,6 @@
   flex-wrap: wrap;
   margin-left: 40px;
   margin-top: 40px;
-  
-  
-  
-  
 }
 .bookstore>* {
   flex: 1 1 600px;
@@ -122,30 +119,17 @@
   font-size: medium;
   font-weight: normal;
 }
-.more{
+.more, .like{
   padding-top: 10px;
   font-size: medium;
   font-weight: normal;
 }
-.like{
-  font-size: medium;
-  font-weight: normal;
-  padding-top: 10px;
-  
-}
 
-
-.button_like{
+.button_like, .button_more{
   border-style: none;
   color: #FFE5B4;
   padding-right: 12px;
 }
-.button_more{
-  border-style: none;
-  color: #FFE5B4;
-  padding-right: 12px;
-}
-
 
 .popup {
   position: fixed;
@@ -186,24 +170,7 @@
   font-size: 20px;
 }
 
-.add_btn{
-  background-color: #800000;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  font-size: 14px;
-  margin: 4px 2px;
-  opacity: 0.6;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: large;
-}
-.add_btn:hover {opacity: 1}
-
-.popupAdd{
+.popupRemove, .popupAdd, .popupChange{
   position: fixed;
   background: #00000050;
   width: 100%;
@@ -212,7 +179,7 @@
   left: 0;
 }
 
-.boxAdd{
+.boxRemove, .boxChange, .boxAdd{
   position: relative;
   width: 70%;
   margin: 0 auto;
@@ -228,32 +195,7 @@
 
 }
 
-.popupChange{
-  position: fixed;
-  background: #00000050;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-}
-
-.boxChange{
-  position: relative;
-  width: 70%;
-  margin: 0 auto;
-  height: auto;
-  max-height: 70vh;
-  margin-top: calc(100vh - 85vh - 20px);
-  background: #6b0600;
-  border-radius: 4px;
-  padding: 20px;
-  border: 1px solid #999;
-  overflow: auto;
-  font-size: larger;
-
-}
-
-.change_btn{
+.remove_btn, .add_btn, .change_btn{
   background-color: #800000;
   border: none;
   color: white;
@@ -269,4 +211,5 @@
   font-size: large;
 }
 
-.change_btn:hover {opacity: 1}
+.remove_btn:hover, .add_btn:hover, .change_btn:hover {opacity: 1}
+
