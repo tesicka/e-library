@@ -1,6 +1,7 @@
 
 *{
   background-color:#9D7B58;
+  font-family: "Helvetica", sans-serif;
 }
 .menuUp {
   display: flex;
@@ -212,4 +213,3 @@
 }
 
 .remove_btn:hover, .add_btn:hover, .change_btn:hover {opacity: 1}
-

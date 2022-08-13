@@ -9,6 +9,7 @@ import MenuDown from './components/MenuDown';
 import MenuUp from './components/MenuUp';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import { render } from '@testing-library/react';
+import Login from './components/Login';
 
 function App() {
 
@@ -122,6 +123,7 @@ function App() {
        
 
        <Routes>
+       <Route path='/login' element={<Login/>}/>
         <Route path='/' element={<Bookstore books={books} Add={likeABook}></Bookstore>}/>
         <Route path='/fav' element={<Favourites books={selectedBooks} />}/>
        </Routes>
