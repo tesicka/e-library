@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import PopupAddBook from './PopupAddBook';
+import PopupChangeBook from './PopupChangeBook';
 
 function MenuUp() {
 
@@ -8,6 +9,12 @@ function MenuUp() {
 
   const togglePopupAdd = () => {
     setIsOpenAdd(!isOpenAdd);
+  }
+
+  const [isOpenChange, setIsOpenChange] = useState(false);
+
+  const togglePopupChange = () => {
+    setIsOpenChange(!isOpenChange);
   }
 
 
@@ -29,9 +36,20 @@ function MenuUp() {
         {isOpenAdd && <PopupAddBook
       handleClose={togglePopupAdd}
     />}
-        
-        </div>
-      <div><button type="button" class="btn btn-danger btn btn-info" id="change_button">Change book's properties</button> </div>
+      </div>
+
+      <div>
+      <input
+      class="btn btn-danger btn btn-info"
+      type="button"
+      value="Change book's characteristics"
+      onClick={togglePopupChange}
+    />
+        {isOpenChange && <PopupChangeBook
+      handleCloseChange={togglePopupChange}
+    />}
+      </div>
+
       <div><button type="button" class="btn btn-danger btn btn-info" id="remove_button">Remove book</button> </div>
     </div>
 
