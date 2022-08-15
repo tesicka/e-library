@@ -33,9 +33,13 @@
   border-bottom-color: #6b0600;
   align-items: flex-start;
   text-align: left;
-  min-height: 78px;
+  min-height: 70px;
   padding-left: 20px;
   font-size: 30px;
+
+ }
+ .down_menu{
+  min-height: 50px;
 
  }
  .menuDownText{
@@ -44,6 +48,11 @@
   font-size: 20px;
   text-align: left;
   
+ }
+
+ .logOut{
+    background-color:#800000;
+    max-height: 30px;
  }
 
  .options{

@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import '../LoginAndRegister.css';
 
-const Login = () => {
+const Login = ({addToken}) => {
 
     const[userData, setUserData] = useState({
         email:"",
@@ -26,8 +26,8 @@ const Login = () => {
             console.log(res.data);
             if(res.data.success === true){
                 window.sessionStorage.setItem("auth_token", res.data.access_token);
-              //  addToken(res.data.access_token);
-              //  navigate("/");
+                addToken(res.data.access_token);
+                navigate("/home");
             }
         }).catch(e=>{
             console.log(e)

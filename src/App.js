@@ -12,6 +12,7 @@ import { render } from '@testing-library/react';
 import Login from './components/Login';
 import Register from './components/Register';
 import MenuFixed from './components/MenuFixed';
+import MenuDownFixed from './components/MenuDownFixed';
 
 function App() {
 
@@ -118,15 +119,20 @@ function App() {
 
   };
 
+    const[token, setToken] = useState();
+    function addToken(auth_token){
+      setToken(auth_token);
+    }
+
   return (
 
     <BrowserRouter>
        
        <Routes>
-       <Route path='/login' element={<div><MenuFixed></MenuFixed><Login/></div>}/>
+       <Route path='/' element={<div><MenuFixed></MenuFixed><Login/></div>}/>
        <Route path='/register' element={<div><MenuFixed/><Register/></div>}/>
-        <Route path='/' element={<div><MenuUp></MenuUp><Bookstore books={books} Add={likeABook}></Bookstore><MenuDown></MenuDown></div>}/>
-        <Route path='/fav' element={<div><MenuFixed></MenuFixed><Favourites books={selectedBooks} /></div>}/>
+        <Route path='/home' element={<div><MenuUp></MenuUp><Bookstore books={books} Add={likeABook}></Bookstore><MenuDown token={token}/></div>}/>
+        <Route path='/fav' element={<div><MenuFixed></MenuFixed><Favourites books={selectedBooks} /><MenuDownFixed token={token}/></div>}/>
        </Routes>
      
        
